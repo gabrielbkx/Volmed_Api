@@ -13,12 +13,14 @@ public class AgendaDeConsultas {
     private MedicoRepository medicoRepository;
     private PacienteRepository pacienteRepository;
 
+    // COnstrutor feito manuelmanete para a injeção de dependencias
     public AgendaDeConsultas(ConsultaRepository consultaRepository, MedicoRepository medicoRepository, PacienteRepository pacienteRepository) {
         this.consultaRepository = consultaRepository;
         this.medicoRepository = medicoRepository;
         this.pacienteRepository = pacienteRepository;
     }
 
+    //metodo para o agendamento de consultas
     public void agendar(DadosAgendamentoConsulta dados){
 
         if (!pacienteRepository.existsById(dados.idPaciente())){
@@ -27,12 +29,16 @@ public class AgendaDeConsultas {
         if (dados.idMedico() != null && !medicoRepository.existsById(dados.idMedico())){
             throw new ValidacaoException("Id do médico informado não existe");
         }
-        var medico = escolherMedico(dados);
+        var medico = escolherMedico(dados);// invoca ou o objeto medico pelo id ou um medico aleatório pela
+        // especialidade
+
         var paciente = pacienteRepository.getReferenceById(dados.idPaciente());
         var consulta = new Consulta(null,medico,paciente,dados.dataHoraConsulta());
         consultaRepository.save(consulta);
     }
 
+    //Este metodo retorna um médico aleatório de uma especialidade x
+    // caso o id do médico vindo na requisição de agendamento seja null
     private Medico escolherMedico(DadosAgendamentoConsulta dados) {
         if (dados.idMedico() != null){
             return medicoRepository.getReferenceById(dados.idMedico());
