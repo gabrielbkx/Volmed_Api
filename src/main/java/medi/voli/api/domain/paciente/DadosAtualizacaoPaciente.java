@@ -8,4 +8,5 @@ public record DadosAtualizacaoPaciente(@NotNull
                                        String nome,
                                        String telefone,
                                        DadosEndereco endereco) {
+
 }
