@@ -3,10 +3,17 @@ package medi.voli.api.domain.consulta.validacoes;
 import medi.voli.api.domain.ValidacaoException;
 import medi.voli.api.domain.consulta.ConsultaRepository;
 import medi.voli.api.domain.consulta.DadosAgendamentoConsulta;
+import org.springframework.stereotype.Component;
 
-public class ValidadorPacienteSemOutraConsultaNoDia {
+
+@Component
+public class ValidadorPacienteSemOutraConsultaNoDia implements ValidadorAgendamentoDeConsultas {
 
     private ConsultaRepository repository;
+
+    public ValidadorPacienteSemOutraConsultaNoDia(ConsultaRepository repository) {
+        this.repository = repository;
+    }
 
     public void validar(DadosAgendamentoConsulta dados) {
 

@@ -2,11 +2,12 @@ package medi.voli.api.domain.consulta.validacoes;
 
 import medi.voli.api.domain.ValidacaoException;
 import medi.voli.api.domain.consulta.DadosAgendamentoConsulta;
-
+import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class ValidadorHorarioAntecedencia {
+@Component
+public class ValidadorHorarioAntecedencia implements ValidadorAgendamentoDeConsultas {
 
     public void validar(DadosAgendamentoConsulta dados){
 
