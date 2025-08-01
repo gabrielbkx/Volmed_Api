@@ -2,7 +2,6 @@ package medi.voli.api.domain.consulta.validacoes;
 
 import medi.voli.api.domain.ValidacaoException;
 import medi.voli.api.domain.consulta.DadosAgendamentoConsulta;
-
 import java.time.DayOfWeek;
 
 public class ValidadorHorarioFuncionamentoClinica {
@@ -15,7 +14,7 @@ public class ValidadorHorarioFuncionamentoClinica {
         var depoisDoExpediente = dataConsulta.getHour() > 18;
 
         if (domingo || antesDaAberturaDaClinica || depoisDoExpediente){
-            throw new ValidacaoException("Consulta fora do horário de funcionamento da clínica. ")
+            throw new ValidacaoException("Consulta fora do horário de funcionamento da clínica. ");
         }
     }
 }
