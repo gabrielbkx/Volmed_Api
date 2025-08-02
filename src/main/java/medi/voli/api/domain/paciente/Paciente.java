@@ -25,7 +25,6 @@ public class Paciente {
     private String cpf;
     private Boolean ativo;
 
-
     @Embedded
     private Endereco endereco;
 
