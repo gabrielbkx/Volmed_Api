@@ -1,5 +1,6 @@
 package medi.voli.api.controller;
 
+
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import medi.voli.api.domain.paciente.*;

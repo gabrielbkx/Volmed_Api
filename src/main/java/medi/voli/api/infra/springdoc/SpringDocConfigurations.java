@@ -14,7 +14,7 @@ public class SpringDocConfigurations {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Volimed API") // <-- Nome da sua API aqui
+                        .title("MedCareAPI") // <-- Nome da sua API aqui
                         .version("1.0.0")
                         .description("API de gerenciamento de uma clínica")
                 )

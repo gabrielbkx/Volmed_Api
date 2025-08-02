@@ -4,7 +4,6 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import medi.voli.api.domain.consulta.AgendaDeConsultas;
 import medi.voli.api.domain.consulta.DadosAgendamentoConsulta;
-import medi.voli.api.domain.consulta.DadosDetalhamentoConsulta;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;

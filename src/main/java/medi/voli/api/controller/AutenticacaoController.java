@@ -1,6 +1,5 @@
 package medi.voli.api.controller;
 
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import medi.voli.api.domain.usuario.Usuario;
 import medi.voli.api.infra.security.DadosTokenJWT;
@@ -18,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/login")
-public class UsuarioController {
+public class AutenticacaoController {
 
     @Autowired
     private AuthenticationManager manager;

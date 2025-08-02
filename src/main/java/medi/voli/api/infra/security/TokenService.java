@@ -1,7 +1,6 @@
 package medi.voli.api.infra.security;
 
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
@@ -29,7 +28,7 @@ public class TokenService {
 
             // Cria o token JWT com informações do emissor, assunto e tempo de expiração
             return JWT.create()
-                    .withIssuer("Api voll med") // Define quem está emitindo o token
+                    .withIssuer("MedCareAPI") // Define quem está emitindo o token
                     .withSubject(usuario.getLogin()) // Define o "dono" do token (quem está autenticado)
                     .withExpiresAt(dataExpiracao()) // Define quando o token expira
                     .sign(algoritmo); // Assina o token com o algoritmo definido
