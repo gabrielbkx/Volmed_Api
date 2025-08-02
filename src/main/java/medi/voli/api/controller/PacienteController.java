@@ -1,5 +1,6 @@
 package medi.voli.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import medi.voli.api.domain.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+
+@SecurityRequirement(name = "bearer-key")
 @RestController
 @RequestMapping("pacientes")
 public class PacienteController {
